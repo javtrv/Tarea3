@@ -26,9 +26,12 @@ class TestSeguridad(unittest.TestCase):
 
         Resultado Obtenido : Falla la invocacion -la funcion no ha sido definida
 
-
+        SE REFACTORIZO EL CODIGO
         '''
         self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006Lop",password2 ="212006Lop"), True)
+
+
+
 
 
 
