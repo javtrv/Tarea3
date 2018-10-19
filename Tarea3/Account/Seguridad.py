@@ -2,20 +2,53 @@ import re
 
 
 class Seguridad:
-  def __init__(self):
-      self.Diccionario = {}
 
+  '''
+  __init__ metodo constructor de la clase Seguridad
+  Inicializa el diccionario vacio.
+
+  '''
+  def __init__(self):
+    self.Diccionario = {}
+
+  '''
+  IngresarUsuario: Funcion que evalua si el correo de encuentra en el diccionario
+  y si la clave coincide con dicho correo
+
+  Param:
+   email: Email ingresado en LOGIN por el usuario
+   password: Clave ingresado en LOGIN por el usuario
+
+  Salida
+    True/False segun el caso.
+
+  '''
   def IngresarUsuario(self,email,password):
     if email in self.Diccionario:
-        ClaveCodificada = self.Diccionario[email]
-        Clave = ClaveCodificada[::-1]
-        if Clave == password:
-            return True
-        else:
-            return False
-    else:
+      ClaveCodificada = self.Diccionario[email]
+      Clave = ClaveCodificada[::-1]
+      if Clave == password:
+        return True
+      else:
         return False
+    else:
+      return False
 
+
+  '''
+
+  RegistrarUsuario: Funcion que guarda en el diccionario los datos ingresados por el usuario.
+  Tambien invoca a las funciones ValidarClave y ValidarCorreo.
+
+  Param:
+     email: Email ingresado en REGISTRAR por el usuario
+     password1: Clave ingresado en REGISTRAR por el usuario
+     password2: Clave de confirmacion en REGISTRAR por el usuario
+
+  Salida
+    True/False segun el caso.
+
+  '''
 
   def RegistrarUsuario(self,email,password1,password2):
       if email in self.Diccionario == True:
@@ -39,7 +72,18 @@ class Seguridad:
           else :
             return False
 
+  '''
 
+  ValidarClave: Funcion que evalua si la clave ingresada por el usuario.
+  Debe cumplir con los requisistos de tener minimo 3 letras, una mayuscula,numeros y sin signos.
+
+  Param:
+    clave: Clave ingresado en REGISTRAR por el usuario
+
+  Salida
+  True/False segun el caso.
+
+  '''
   def ValidarClave(self,clave):
       Mayusculas = 0
       Minusculas = 0
@@ -73,7 +117,18 @@ class Seguridad:
       else:
         return False
 
+  '''
 
+  ValidarCorreoElectronico: Funcion que evalua el correo ingresada por el usuario.
+  Debe cumplir con los requisistos de tener estructura de correo electronico con un @ y un dominio.
+
+  Param:
+   email: correo ingresado en REGISTRAR por el usuario
+
+  Salida
+    True/False segun el caso.
+
+  '''
   def ValidarCorreoElectronico(self,email) :
 
       if (re.match(r"[^@]+@[^@]+\.[^@]+",email) == None):

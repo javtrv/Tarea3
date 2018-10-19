@@ -3,8 +3,6 @@ import unittest
 
 from Seguridad import *
 
-
-# Create your tests here.
 class TestSeguridad(unittest.TestCase):
 
     def setUp(self):
