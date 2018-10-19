@@ -142,103 +142,120 @@ class TestSeguridad(unittest.TestCase):
         '''
         self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "Loop$$",password2 ="Loop$$"), False)
 
-        def test_ValidarClave(self):
-            '''
-            Paso 6 , Caso 6
+    def test_ValidarClave(self):
+        '''
+        Paso 6 , Caso 6
+        Caso de Prueba : Clave "Jaja1234"
 
-            Caso de Prueba : Clave "Jaja1234"
+        PRUEBA INTERIOR
 
-            PRUEBA INTERIOR
+        Se invoca la funcion ValidarClave()
 
-            Se invoca la funcion ValidarClave()
+        Resultado esperado : TRUE
 
-            Resultado esperado : TRUE
+        Resultado Obtenido : Valido. TRUE Clave valida
+        '''
+        self.assertEqual(self.prueba.ValidarClave(clave = "Jaja1234"), True)
 
-            Resultado Obtenido : Valido. TRUE Clave valida
+        '''
+        Paso 7 , Caso 7
 
-            '''
-            self.assertEqual(self.prueba.ValidarClave(password1 = "Jaja1234"), True)
+        Caso de Prueba : Clave "jaja1234" Clave INVALIDA sin mayusculas
 
-            '''
-            Paso 7 , Caso 7
+        PRUEBA FRONTERA
 
-            Caso de Prueba : Clave "jaja1234" Clave INVALIDA sin mayusculas
+        Se invoca la funcion ValidarClave()
 
-            PRUEBA FRONTERA
+        Resultado esperado : FALSE
 
-            Se invoca la funcion ValidarClave()
+        Resultado Obtenido : Valido. FALSe Clave invalida
 
-            Resultado esperado : FALSE
+        '''
+        self.assertEqual(self.prueba.ValidarClave(clave = "jaja1234"), False)
 
-            Resultado Obtenido : Valido. FALSe Clave invalida
+        '''
+        Paso 8 , Caso 8
 
-            '''
-            self.assertEqual(self.prueba.ValidarClave(password1 = "jaja1234"), False)
+        Caso de Prueba : Clave "$$$$" Clave INVALIDA signos invalidos
 
-            '''
-            Paso 8 , Caso 8
+        PRUEBA MALICIA
 
-            Caso de Prueba : Clave "$$$$" Clave INVALIDA signos invalidos
+        Se invoca la funcion ValidarClave()
 
-            PRUEBA MALICIA
+        Resultado esperado : FALSE
 
-            Se invoca la funcion ValidarClave()
+        Resultado Obtenido : Valido. FALSe Clave invalida
 
-            Resultado esperado : FALSE
-
-            Resultado Obtenido : Valido. FALSe Clave invalida
-
-            '''
-            self.assertEqual(self.prueba.ValidarClave(password1 = "$$$$"), False)
+        '''
+        self.assertEqual(self.prueba.ValidarClave(clave = "$$$$"), False)
 
     def test_ValidarCorreoElectronico(self):
-            '''
-            Paso 9 , Caso 9
+        '''
+        Paso 9 , Caso 9
 
-            Caso de Prueba : Correo "javier@gmail.com"
+        Caso de Prueba : Correo "javier@gmail.com"
 
-            PRUEBA INTERIOR
+        PRUEBA INTERIOR
 
-            Se invoca la funcion ValidarCorreoElectronico()
+        Se invoca la funcion ValidarCorreoElectronico()
 
-            Resultado esperado : TRUE
+        Resultado esperado : TRUE
 
-            Resultado Obtenido : Valido. TRUE Clave valida
+        Resultado Obtenido : Valido. TRUE Clave valida
 
-            '''
-            self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail.com"), True)
+        '''
+        self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail.com"), True)
 
-            '''
-            Paso 10 , Caso 10
+        '''
+        Paso 10 , Caso 10
 
-            Caso de Prueba : Correo "javier@gmail"
+        Caso de Prueba : Correo "javier@gmail"
 
-            PRUEBA FRONTERA
+        PRUEBA FRONTERA
 
-            Se invoca la funcion ValidarCorreoElectronico()
+        Se invoca la funcion ValidarCorreoElectronico()
 
-            Resultado esperado : FALSE
+        Resultado esperado : FALSE
 
-            Resultado Obtenido : Valido. FALSE Correo invalida
+        Resultado Obtenido : Valido. FALSE Correo invalida
 
-            '''
-            self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail"), False)
+        '''
+        self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail"), False)
 
-            '''
-            Paso 11 , Caso 11
+        '''
+        Paso 11 , Caso 11
 
-            Caso de Prueba : Correo "javiergmail.com"
+        Caso de Prueba : Correo "javiergmail.com"
 
-            PRUEBA FRONTERA
+        PRUEBA FRONTERA
 
-            Se invoca la funcion ValidarCorreoElectronico()
+        Se invoca la funcion ValidarCorreoElectronico()
 
-            Resultado esperado : FALSE
+        Resultado esperado : FALSE
 
-            Resultado Obtenido : Valido. FALSE Correo invalida
+        Resultado Obtenido : Valido. FALSE Correo invalida
 
-            '''
-            self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javiergmail.com"), False)
+        '''
+        self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javiergmail.com"), False)
+
+    def test_IngresarUsuario(self):
+
+
+        '''
+        Paso 12 , Caso 12
+
+        Caso de Prueba : Se registra una persona con email "luis14@hotmail.com" con la clave "212006Lop" Validos.
+        Y se logea con el correo "luis14@hotmail.com" y clave "212006Lop"
+
+        Se invoca la funcion IngresarUsuario()
+
+        Resultado esperado : True
+
+        Resultado Obtenido : Falla la invocacion -la funcion IngresarUsuario no ha sido definida
+        '''
+
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006Lop",password2 ="212006Lop"), True)
+        self.assertEqual(self.prueba.IngresarUsuario(email = "luis14@hotmail.com", password = "212006Lop"), True)
 
 if __name__ == '__main__':
     unittest.main()
