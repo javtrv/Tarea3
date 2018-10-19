@@ -13,6 +13,8 @@ class Seguridad:
             return True
         else:
             return False
+    else:
+        return False
 
 
   def RegistrarUsuario(self,email,password1,password2):

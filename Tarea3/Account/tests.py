@@ -251,11 +251,29 @@ class TestSeguridad(unittest.TestCase):
 
         Resultado esperado : True
 
-        Resultado Obtenido : Falla la invocacion -la funcion IngresarUsuario no ha sido definida
+        Resultado Obtenido : Valido. TRUE.
         '''
 
         self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006Lop",password2 ="212006Lop"), True)
         self.assertEqual(self.prueba.IngresarUsuario(email = "luis14@hotmail.com", password = "212006Lop"), True)
 
+
+        '''
+        Paso 13 , Caso 13
+
+        Caso de Prueba : Se registra una persona con email "luis14@hotmail.com" con la clave "212006Lop" Validos.
+        Y se logea con el correo "luis@hotmail.com" y clave "212006Lop"
+
+        Se invoca la funcion IngresarUsuario()
+
+        Resultado esperado : FALSE
+
+        Resultado Obtenido : Valido. FALSE. Correo no registrado
+
+        REFACTORIZACION DE CODIGO
+        '''
+
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006Lop",password2 ="212006Lop"), True)
+        self.assertEqual(self.prueba.IngresarUsuario(email = "luis@hotmail.com", password = "212006Lop"), False)
 if __name__ == '__main__':
     unittest.main()
