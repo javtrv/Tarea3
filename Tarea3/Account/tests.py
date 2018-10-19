@@ -142,7 +142,22 @@ class TestSeguridad(unittest.TestCase):
         '''
         self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "Loop$$",password2 ="Loop$$"), False)
 
+        def test_ValidarClave(self):
+            '''
+            Paso 6 , Caso 6
 
+            Caso de Prueba : Clave "Jaja1234"
+
+            PRUEBA INTERIOR
+
+            Se invoca la funcion ValidarClave()
+
+            Resultado esperado : TRUE
+
+            Resultado Obtenido : Valido. TRUE Clave valida
+
+            '''
+            self.assertEqual(self.prueba.ValidarClave(password1 = "Jaja1234"), True)
 
 
 
