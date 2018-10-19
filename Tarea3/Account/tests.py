@@ -44,6 +44,20 @@ class TestSeguridad(unittest.TestCase):
         '''
         self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14hotmail.com", password1 = "212006Lop",password2 ="212006Lop"), False)
 
+        '''
+        Paso 3 , Caso 3
+        Caso de Prueba : Una persona con email "luis14hotmail.com" que intenta registrarse
+        con la clave "212006Lop1" y confirmacion de password2 = "21206Lop" .
+
+        Se invoca la funcion RegistrarUsuario()
+
+        Resultado esperado : False
+
+        Resultado Obtenido : Valido. FALSE clave no igual.
+
+        '''
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006Lop1",password2 ="212006Lop"), False)
+
 
 
 
