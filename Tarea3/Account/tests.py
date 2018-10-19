@@ -159,6 +159,21 @@ class TestSeguridad(unittest.TestCase):
             '''
             self.assertEqual(self.prueba.ValidarClave(password1 = "Jaja1234"), True)
 
+            '''
+            Paso 7 , Caso 7
+
+            Caso de Prueba : Clave "jaja1234" Clave INVALIDA sin mayusculas
+
+            PRUEBA FRONTERA
+
+            Se invoca la funcion ValidarClave()
+
+            Resultado esperado : FALSE
+
+            Resultado Obtenido : Valido. FALSe Clave invalida
+
+            '''
+            self.assertEqual(self.prueba.ValidarClave(password1 = "jaja1234"), False)
 
 
 if __name__ == '__main__':
