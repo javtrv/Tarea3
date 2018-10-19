@@ -1,11 +1,9 @@
 import re
 
 
-
 class Seguridad:
     def __init__(self):
-        self.Diccionario = {} 
- 
+        self.Diccionario = {}
 
-    def IngresarUsuario(self,email,password):
-    	return 
+    def RegistrarUsuario(self,email,password1,password2):
+        return
