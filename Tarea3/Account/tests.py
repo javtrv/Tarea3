@@ -46,9 +46,9 @@ class TestSeguridad(unittest.TestCase):
 
         '''
         Paso 3 , Caso 3
-        Caso de Prueba : Una persona con email "luis14hotmail.com" que intenta registrarse
+        Caso de Prueba : Una persona con email "luis14@hotmail.com" que intenta registrarse
         con la clave "212006Lop1" y confirmacion de password2 = "21206Lop" .
-
+        PRUEBA FRONTERA
         Se invoca la funcion RegistrarUsuario()
 
         Resultado esperado : False
@@ -57,6 +57,21 @@ class TestSeguridad(unittest.TestCase):
 
         '''
         self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006Lop1",password2 ="212006Lop"), False)
+
+        '''
+        Paso 4 , Caso 4
+        Caso de Prueba : Una persona con email "luis14@hotmail.com" que intenta registrarse
+        con la clave "212006L" y confirmacion de password2 = "21206L". Contraseña INVALIDA
+        PRUEBA FRONTERA
+
+        Se invoca la funcion RegistrarUsuario()
+
+        Resultado esperado : False
+
+        Resultado Obtenido : Valido. FALSE clave no igual.
+
+        '''
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006L",password2 ="212006L"), False)
 
 
 
