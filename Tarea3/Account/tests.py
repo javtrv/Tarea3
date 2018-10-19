@@ -191,5 +191,22 @@ class TestSeguridad(unittest.TestCase):
             '''
             self.assertEqual(self.prueba.ValidarClave(password1 = "$$$$"), False)
 
+    def test_ValidarCorreoElectronico(self):
+            '''
+            Paso 9 , Caso 9
+
+            Caso de Prueba : Correo "javier@gmail.com"
+
+            PRUEBA INTERIOR
+
+            Se invoca la funcion ValidarClave()
+
+            Resultado esperado : TRUE
+
+            Resultado Obtenido : Valido. TRUE Clave valida
+
+            '''
+            self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail.com"), True)
+
 if __name__ == '__main__':
     unittest.main()
