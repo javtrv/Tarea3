@@ -224,5 +224,21 @@ class TestSeguridad(unittest.TestCase):
             '''
             self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail"), False)
 
+            '''
+            Paso 11 , Caso 11
+
+            Caso de Prueba : Correo "javiergmail.com"
+
+            PRUEBA FRONTERA
+
+            Se invoca la funcion ValidarCorreoElectronico()
+
+            Resultado esperado : FALSE
+
+            Resultado Obtenido : Valido. FALSE Correo invalida
+
+            '''
+            self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javiergmail.com"), False)
+
 if __name__ == '__main__':
     unittest.main()
