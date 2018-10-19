@@ -34,7 +34,7 @@ class TestSeguridad(unittest.TestCase):
         Paso 2 , Caso 2
         Caso de Prueba : Una persona con email "luis14hotmail.com" que intenta registrarse
         con la clave "212006Lop" .
-
+        PRUEBA FRONTERA
         Se invoca la funcion RegistrarUsuario()
 
         Resultado esperado : False
@@ -73,6 +73,74 @@ class TestSeguridad(unittest.TestCase):
         '''
         self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006L",password2 ="212006L"), False)
 
+
+        '''
+        Paso 5 , Caso 5
+        Caso de Prueba : Una persona con email "luis14@hotmail.com" que intenta registrarse
+        con la clave "212006L" y confirmacion de password2 = "21206L". Contraseña INVALIDA
+        PRUEBA FRONTERA
+
+        Se invoca la funcion RegistrarUsuario()
+
+        Resultado esperado : False
+
+        Resultado Obtenido : Valido. FALSE clave no igual.
+
+        '''
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "212006L",password2 ="212006L"), False)
+
+        '''
+        Paso 6 , Caso 6
+
+        Caso de Prueba : Una persona con email "luis14hotmail.com" que intenta registrarse
+        con la clave "212006L" y confirmacion de password2 = "21206L". Contraseña INVALIDA y CORREO INVALIDO
+
+        PRUEBA ESQUINA
+
+        Se invoca la funcion RegistrarUsuario()
+
+        Resultado esperado : False
+
+        Resultado Obtenido : Valido. FALSE clave y correo
+
+        '''
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14hotmail.com", password1 = "212006L",password2 ="212006L"), False)
+
+
+        '''
+        Paso 7 , Caso 7
+
+        Caso de Prueba : Una persona con email "123123" que intenta registrarse
+        con la clave "212006Lop" y confirmacion de password2 = "21206Lop". Correo invalido
+
+        PRUEBA MALICIA
+
+        Se invoca la funcion RegistrarUsuario()
+
+        Resultado esperado : False
+
+        Resultado Obtenido : Valido. FALSE Correo invalido
+
+        '''
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "123123", password1 = "212006L",password2 ="212006L"), False)
+
+
+        '''
+        Paso 8 , Caso 8
+
+        Caso de Prueba : Una persona con email "luis14@hotmail.com" que intenta registrarse
+        con la clave "Loop$$" y confirmacion de password2 = "Loop$$". Clave invalida
+
+        PRUEBA MALICIA
+
+        Se invoca la funcion RegistrarUsuario()
+
+        Resultado esperado : False
+
+        Resultado Obtenido : Valido. FALSE Clave invalida
+
+        '''
+        self.assertEqual(self.prueba.RegistrarUsuario(email = "luis14@hotmail.com", password1 = "Loop$$",password2 ="Loop$$"), False)
 
 
 
