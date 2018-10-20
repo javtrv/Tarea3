@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Correo Electronico</label>
+            <input type="text" name="email">
+        </p>
+        <p>
+            <label>Clave</label>
+            <input type="password" name="password">
+        </p>
+        <button type="submit">Login</button>
+        <p>                                   </p>
+        <p>                                   </p>
+        <p>¿No posees una cuenta? Registrate en el programa.</p>
+        <p><a href="/registro">Registrarse</a></p>
+        <p>                             </p>
+        <p>                             </p>
+        <p>Volver a la pagina de Inicio.</p>
+        <a href="/">Home</a>
+    </form>
+</body>
+
+</html>

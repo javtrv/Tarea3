@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <form method="POST">
+         {{ form.as_p }}
+        <p>
+            <label>Correo Electronico</label>
+            <input type="text" name="emaillogin">   
+        </p>
+        <p>
+            <label>Clave</label>
+            <input type="password" name="passwordlogin">
+        </p>
+        <button type="submit">Login</button>
+        <p>                                   </p>
+        <p>                                   </p>
+        <p>¿Ya tienes una cuenta? Accede al programa.</p>
+        <p><a href="/registro">Registrarse</a></p>
+        <p>                                   </p>
+        <p>                                   </p>
+        <p>Volver a la pagina de Inicio.</p>
+        <a href="/">Home</a>
+    </form>
+</body>
+
+</html>

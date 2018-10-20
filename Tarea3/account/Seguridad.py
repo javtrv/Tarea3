@@ -1,3 +1,9 @@
+'''
+	@authors
+ 	Mariagabriela Jaimes (14-10526)
+ 	Javier Medina (12-10400)
+'''
+
 import re
 
 

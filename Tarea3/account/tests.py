@@ -1,3 +1,8 @@
+'''
+    @authors
+    Mariagabriela Jaimes (14-10526)
+    Javier Medina (12-10400)
+'''
 from django.test import TestCase
 import unittest
 
@@ -142,7 +147,7 @@ class TestSeguridad(unittest.TestCase):
 
     def test_ValidarClave(self):
         '''
-        Paso 6 , Caso 6
+        Paso 9 , Caso 9
         Caso de Prueba : Clave "Jaja1234"
 
         PRUEBA INTERIOR
@@ -156,7 +161,7 @@ class TestSeguridad(unittest.TestCase):
         self.assertEqual(self.prueba.ValidarClave(clave = "Jaja1234"), True)
 
         '''
-        Paso 7 , Caso 7
+        Paso 10 , Caso 10
 
         Caso de Prueba : Clave "jaja1234" Clave INVALIDA sin mayusculas
 
@@ -172,7 +177,7 @@ class TestSeguridad(unittest.TestCase):
         self.assertEqual(self.prueba.ValidarClave(clave = "jaja1234"), False)
 
         '''
-        Paso 8 , Caso 8
+        Paso 11 , Caso 11
 
         Caso de Prueba : Clave "$$$$" Clave INVALIDA signos invalidos
 
@@ -189,7 +194,7 @@ class TestSeguridad(unittest.TestCase):
 
     def test_ValidarCorreoElectronico(self):
         '''
-        Paso 9 , Caso 9
+        Paso 12 , Caso 12
 
         Caso de Prueba : Correo "javier@gmail.com"
 
@@ -205,7 +210,7 @@ class TestSeguridad(unittest.TestCase):
         self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail.com"), True)
 
         '''
-        Paso 10 , Caso 10
+        Paso 13 , Caso 13
 
         Caso de Prueba : Correo "javier@gmail"
 
@@ -221,7 +226,7 @@ class TestSeguridad(unittest.TestCase):
         self.assertEqual(self.prueba.ValidarCorreoElectronico(email = "javier@gmail"), False)
 
         '''
-        Paso 11 , Caso 11
+        Paso 14 , Caso 14
 
         Caso de Prueba : Correo "javiergmail.com"
 
@@ -240,7 +245,7 @@ class TestSeguridad(unittest.TestCase):
 
 
         '''
-        Paso 12 , Caso 12
+        Paso 15 , Caso 15
 
         Caso de Prueba : Se registra una persona con email "luis14@hotmail.com" con la clave "212006Lop" Validos.
         Y se logea con el correo "luis14@hotmail.com" y clave "212006Lop"
@@ -257,7 +262,7 @@ class TestSeguridad(unittest.TestCase):
 
 
         '''
-        Paso 13 , Caso 13
+        Paso 16 , Caso 16
 
         Caso de Prueba : Se registra una persona con email "luis14@hotmail.com" con la clave "212006Lop" Validos.
         Y se logea con el correo "luis@hotmail.com" y clave "212006Lop"

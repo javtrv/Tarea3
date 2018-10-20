@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %} {{ form.as_p }}
+        <p>
+            <label>Correo Electronico</label>
+            <input type="text" name="email">   
+        </p>
+        <p>
+            <label>Clave</label>
+            <input type="password" name="password">
+        </p>
+        <p>
+            <label>Clave*</label>
+            <input type="password" name="password2">
+        </p>
+        <button type="submit">Registrarse</button>
+        <p>                                   </p>
+        <p>                                   </p>
+        <p>¿Ya tienes una cuenta? Accede al programa.</p>
+        <p><a href="/login">Login</a></p>
+        <p>                                   </p>
+        <p>                                   </p>
+        <p>Volver a la pagina de Inicio.</p>
+        <a href="/">Home</a>
+    </form>
+</body>
+
+</html>
